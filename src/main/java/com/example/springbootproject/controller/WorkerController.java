@@ -32,7 +32,7 @@ public class WorkerController {
     @PutMapping("/workers/{id}")
     public ResponseEntity<Worker> updateWorker(@RequestBody Worker worker, @PathVariable int id) {
         worker.setId(id);
-       Worker returnValue = workerService.updateDeparture(worker);
+        Worker returnValue = workerService.updateWorker(worker);
 
         if (Objects.isNull(returnValue)) {
             return ResponseEntity.notFound().build();
